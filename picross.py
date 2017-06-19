@@ -74,6 +74,30 @@ PUZZLE_NAME.append("Dialga");
 ROW_CLUES_LIST.append( ((2, 5, 1), (2, 3, 5, 2), (1, 1, 1, 6, 2, 1), (1, 1, 1, 3, 2, 2), (1, 2, 2, 2, 2), (4, 1, 2), (1, 2, 2, 2, 2), (1, 1, 1, 1, 2), (2, 3, 1, 1, 2), (1, 1, 1, 4, 1), (4, 2, 2, 1), (3, 3, 2, 3), (1, 4, 2, 1, 1), (3, 2, 1), (4, 2, 3)) );
 COL_CLUES_LIST.append( ((2, ), (1, 2, 1, 2), (1, 1, 2, 1), (1, 2, 3), (2, 3, 1, 2), (1, 3, 5), (2, 1, 1, 1), (1, 2, 2, 5), (1, 3, 6), (4, 2, 4), (2, 1, 2, 1), (3, 1, 6), (2, 2, 1, 1, 4), (2, 2, 2, 1, 1), (1, 2, 2, 1, 3), (1, 1, 2, 2, 1, 2), ( 1, 2, 2, 1), (1, 1, 1), (1, 1), (0, )) );
 
+PUZZLE_NAME.append("Moltres");
+ROW_CLUES_LIST.append( ((5,1,5,2), (1,2,2,4,1,2), (6,1,1,1), (2,3,2,1), (1,2,2,1,1), (3,4,2,6), (2,1,1,3,2), (1,4,3), (2,1,2,2), (2,1,3,1), (6,2), (1,1,1,1,1,5), (1,1,3,1,3), (1,6,3), (4,2,3)) );
+COL_CLUES_LIST.append( ((2,2,), (2,1,1,1), (1,1,2,3,1), (4,5,2), (3,1,1,2,1), (1,2,1,1,2), (6,3,1), (5,1,1,1), (1,1,1,2), (1,3,1,1), (1,2,1,5), (1,1,2,1,1), (2,1,1,1,2), (1,2,2,1,1), (2,1,1,1,1), (1,1,2,1), (1,2,1,1), (2,1,1,1,2), (2,4,2), (3,1,3,2)) );
+
+PUZZLE_NAME.append("Groudon");
+ROW_CLUES_LIST.append ( ((1,1,2), (2,2,4), (2,2,1,1,2), (1,2,4,1,1,1), (1,1,1,1,5,1), (2,1,3,1,1,3), (1,1,2,1,2,1,1), (7,5,1), (2,5,6), (1,4,6,1), (4,1,1,8), (2,2,4,7), (1,6,1,4), (8,8), (6,1,4,1)) );
+COL_CLUES_LIST.append ( ((3,), (2,2,), (4,1,3), (4,8), (2,2,5), (2,3,2,3), (2,9), (2,6,3), (2,1,1,3,1), (3,4,1), (1,2,2), (2,1,2,2,1), (2,1,5,2), (1,2,9), (1,11), (3,8), (1,1,8), (1,1,4,1), (2,1,1,1), (2,1)) );
+
+PUZZLE_NAME.append("Entei");
+ROW_CLUES_LIST.append( ((1,1,2,3), (4,1,1,3), (1,1,3,1), (1,1,2,4), (1,3,1), (6,2,2,1), (2,1,4,1,3,1), (2,1,1,1), (1,2,2,1,1), (2,1,3,1,3), (1,3,1,3,1,4), (2,3,3,2,4), (1,4,4,4), (3,1,3,1,1), (3,1,2,1)) );
+COL_CLUES_LIST.append( ((1,3), (2,1,2,1), (2,1,1), (1,1,2), (1,2,1), (1,1,1), (2,2), (3,2,1,1,1), (2,10), (3,2,2), (2,5), (1,1,3,2), (4,1,2,3), (1,1,2,4), (1,1,7), (1,3,1), (1,3,3), (4,7), (2,1,1,4), (1,2,1,4)) );
+
+PUZZLE_NAME.append("Terrakion");
+ROW_CLUES_LIST.append( ((1,2,1,4,1), (1,1,1,1,3,1), (1,1,1,1,3), (1,1,4,1,4), (4,4,3,1), (2,3,1,3,1), (1,3,1), (2,1,4,1), (2,2,1,1,1), (2,1,1,1,2,1,1), (1,1,1,1,1,3), (1,1,1,1,2,2), (3,2,2,1,1,2), (2,3,2,1,1), (10,1)) );
+COL_CLUES_LIST.append( ((2,2), (2,2), (2,5), (9,), (1,1,2,3), (1,2,1,2), (6,1,1), (2,4,1,1,2), (1,2,1,1,1), (5,2,1,1), (2,1,1), (2,3,2), (1,2,1,1,2,2), (1,1,1,1,2,1), (2,2,4,1), (1,1,2), (2,1,1), (1,2), (1,6), (1,5,1,1,1)) );
+
+PUZZLE_NAME.append("Reshiram");
+ROW_CLUES_LIST.append( ((2,2,1,2), (4,2,1), (3,2,3), (3,3,1,3), (2,1,1,2,4,1), (1,3,4,2), (1,2,2,2,1), (3,2,1,1,2,1), (3,3,2), (5,1,3,3), (3,1,2,1,1), (3,1,1,1,1), (2,5,1,1,1), (1,3,1,3,2,3), (3,2,2,5)) );
+COL_CLUES_LIST.append( ((3,1,2), (1,2,1,1,1), (2,3,1,2), (2,1,2,1,2), (3,1,1,1,1,1), (3,2,1,1,2,1), (2,1,1,1,1,1), (1,2,1,2), (1,1,1,3), (1,1,2,1), (1,1,1,1,1), (1,1,6,1), (2,1,1,1,1), (1,2,4,1,1), (5,1,1,2), (6,2,3), (2,2,1), (2,2), (1,2,1,1), (2,2,1,1,2)) );
+
+PUZZLE_NAME.append("unknown");
+ROW_CLUES_LIST.append( ((3,2,1,1), (2,1,1,2,1), (1,1,1,1,2), (7,2), (1,1,1,2,1,1), (1,2,1), (1,3), (2,2,1,1), (3,1,3,1), (1,1,5,2), (2,3,2), (3,3,4,1), (2,2), (5,), (1,3)) );
+COL_CLUES_LIST.append( ((2,1,1), (2,1,2), (1,3,1), (2,2,5), (2,1), (2,1), (1,1,2,1), (5,1,3,1), (1,4,2), (2,6), (9,1,1), (2,2,1,2), (2,1,1,1,2), (2,1,1,2,1), (3,1,1,2)) );
+
 class graphCell :
     def __init__(self) :
         self.possibleColClues = [];       # list of indeces into COL_CLUES that are possible matches to cell
@@ -385,6 +409,7 @@ def mark_overlaps_row ( row_number ) :
         possible_cells = clue_data[1] - clue_data[0] + 1;
         overlap = (2*ROW_CLUES[row_number][index]) - possible_cells;
         overlap_index = clue_data[1] - abs(ROW_CLUES[row_number][index] - possible_cells);
+        #print "row is ", row_number, "index is ", index, " clue value is ", ROW_CLUES[row_number][index], " possible cell # ", clue_data[1], clue_data[0], possible_cells, " overlap is ", overlap, " overlap_index is ", overlap_index;
         # if overlap == clue size then place X's as well
         if overlap == ROW_CLUES[row_number][index] :
             try :
@@ -423,7 +448,11 @@ def mark_overlaps_row ( row_number ) :
             overlap_index -= 1;
             overlap -= 1;
 
-            clean_clues_row(row_number);
+    #print "before clean clues"
+    #print_graph(debug);
+    clean_clues_row(row_number);
+    #print "after clean clues"
+    #print_graph(debug);
 
 def mark_overlaps_col ( col_number ) :
     global ROW_CLUES, COL_CLUES;
@@ -485,10 +514,11 @@ def mark_overlaps_col ( col_number ) :
                 print_col_data(col_number);
                 raise;
 
-            clean_clues_col(col_number);
+    clean_clues_col(col_number);
 
 ##################################################################################
 def clean_clues_row ( row_number ) :
+    #print_row_data(row_number);
     for row_index in range (0,PUZZLE_WIDTH) :
         clues_to_remove = [];
         for clue in GRAPH[row_index][row_number].possibleRowClues :
@@ -524,7 +554,92 @@ def clean_clues_row ( row_number ) :
                 clues_to_remove.append(clue);
         for clue_to_remove in clues_to_remove :
             GRAPH[row_index][row_number].possibleRowClues.remove(clue_to_remove);
+   
+    # going forward, each clue should appear at least it's clue value times without the next clue also being possible
+    # in reverse, each clue should appear at least it's clue value times without the next clue also being possible
+    #print_row_data(row_number);
+    clue = 0;
+    clue_val = ROW_CLUES[row_number][clue];
+    for row_index in range (0, PUZZLE_WIDTH) :
+        if clue_val >= 0 :
+            if clue_val == 0 and not clue in GRAPH[row_index][row_number].possibleRowClues : #(GRAPH[row_index][row_number].val == 'X' or len(GRAPH[row_index][row_number].possibleRowClues) == 0) : # ok
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue > clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue += 1;
+                    if clue > len(ROW_CLUES[row_number])-1 :
+                        break;
+                    clue_val = ROW_CLUES[row_number][clue];
+            elif GRAPH[row_index][row_number].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                clue_val = ROW_CLUES[row_number][clue];
+            elif clue in GRAPH[row_index][row_number].possibleRowClues :
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue > clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue += 1;
+                    if clue > len(ROW_CLUES[row_number])-1 :
+                        break;
+                    clue_val = ROW_CLUES[row_number][clue];
+            elif not clue in GRAPH[row_index][row_number].possibleRowClues :
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue > clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
+
+    clue = len(ROW_CLUES[row_number])-1;
+    clue_val = ROW_CLUES[row_number][clue];
+    for row_index in range (PUZZLE_WIDTH-1, -1, -1) :
+        if clue_val >= 0 :
+            if clue_val == 0 and not clue in GRAPH[row_index][row_number].possibleRowClues : #(GRAPH[row_index][row_number].val == 'X' or len(GRAPH[row_index][row_number].possibleRowClues) == 0) : # ok
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue < clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue -= 1;
+                    if clue < 0 :
+                        break;
+                    clue_val = ROW_CLUES[row_number][clue];
+            elif clue in GRAPH[row_index][row_number].possibleRowClues :
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue < clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue -= 1;
+                    if clue < 0 :
+                        break;
+                    clue_val = ROW_CLUES[row_number][clue];
+            elif GRAPH[row_index][row_number].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                clue_val = ROW_CLUES[row_number][clue];
+            elif not clue in GRAPH[row_index][row_number].possibleRowClues :
+                for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
+                    if cell_clue < clue :
+                        GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
     
+    # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
+    #print_row_data(row_number);
+    for row_index in range (0, PUZZLE_WIDTH) :
+        if GRAPH[row_index][row_number].val == 'O' :
+            clue = GRAPH[row_index][row_number].possibleRowClues[0];
+            clue_val = ROW_CLUES[row_number][clue];
+            boundary_index = row_index+clue_val; #includes following X
+            for remove_index in range (boundary_index+1, PUZZLE_WIDTH) :
+                if clue in GRAPH[remove_index][row_number].possibleRowClues :
+                    GRAPH[remove_index][row_number].possibleRowClues.remove(clue);
+    #going backwards, the last clue
+    for row_index in range (PUZZLE_WIDTH-1, -1, -1) :
+        if GRAPH[row_index][row_number].val == 'O' :
+            clue = GRAPH[row_index][row_number].possibleRowClues[-1];
+            clue_val = ROW_CLUES[row_number][clue];
+            boundary_index = row_index-clue_val; #includes following X
+            for remove_index in range (boundary_index, -1, -1) :
+                if clue in GRAPH[remove_index][row_number].possibleRowClues :
+                    GRAPH[remove_index][row_number].possibleRowClues.remove(clue);
+
 ##################################################################################
 def clean_clues_col ( col_number ) :
     for col_index in range (0,PUZZLE_HEIGHT) :
@@ -562,93 +677,179 @@ def clean_clues_col ( col_number ) :
                 clues_to_remove.append(clue);
         for clue_to_remove in clues_to_remove :
             GRAPH[col_number][col_index].possibleColClues.remove(clue_to_remove);
+   
+    # going forward, each clue should appear at least it's clue value times without the next clue also being possible
+    # in reverse, each clue should appear at least it's clue value times without the next clue also being possible
+    clue = 0;
+    clue_val = COL_CLUES[col_number][clue];
+    for col_index in range (0, PUZZLE_HEIGHT) :
+        if clue_val >= 0 :
+            if clue_val == 0 and not clue in GRAPH[col_number][col_index].possibleColClues : #(GRAPH[col_number][col_index].val == 'X' or len(GRAPH[col_number][col_index].possibleColClues) == 0) : # ok
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue > clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue += 1;
+                    if clue > len(COL_CLUES[col_number])-1 :
+                        break;
+                    clue_val = COL_CLUES[col_number][clue];
+            elif clue in GRAPH[col_number][col_index].possibleColClues :
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue > clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue += 1;
+                    if clue > len(COL_CLUES[col_number])-1 :
+                        break;
+                    clue_val = COL_CLUES[col_number][clue];
+            elif GRAPH[col_number][col_index].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                clue_val = COL_CLUES[col_number][clue];
+            elif not clue in GRAPH[col_number][col_index].possibleColClues :
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue > clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+    clue = len(COL_CLUES[col_number])-1;
+    clue_val = COL_CLUES[col_number][clue];
+    for col_index in range (PUZZLE_HEIGHT-1, -1, -1) :
+        if clue_val >= 0 :
+            if clue_val == 0 and not clue in GRAPH[col_number][col_index].possibleColClues : #(GRAPH[col_number][col_index].val == 'X' or len(GRAPH[col_number][col_index].possibleColClues) == 0) : # ok
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue < clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue -= 1;
+                    if clue < 0 :
+                        break;
+                    clue_val = COL_CLUES[col_number][clue];
+            elif clue in GRAPH[col_number][col_index].possibleColClues :
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue < clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+                clue_val -= 1;
+                if clue_val < 0 :
+                    clue -= 1;
+                    if clue < 0 :
+                        break;
+                    clue_val = COL_CLUES[col_number][clue];
+            elif GRAPH[col_number][col_index].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                clue_val = COL_CLUES[col_number][clue];
+            elif not clue in GRAPH[col_number][col_index].possibleColClues :
+                for cell_clue in GRAPH[col_number][col_index].possibleColClues :
+                    if cell_clue < clue :
+                        GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
+    
+    # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
+    for col_index in range (0, PUZZLE_HEIGHT) :
+        if GRAPH[col_number][col_index].val == 'O' :
+            clue = GRAPH[col_number][col_index].possibleColClues[0];
+            clue_val = COL_CLUES[col_number][clue];
+            boundary_index = col_index+clue_val; #includes following X
+            for remove_index in range (boundary_index+1, PUZZLE_HEIGHT) :
+                if clue in GRAPH[col_number][remove_index].possibleColClues :
+                    GRAPH[col_number][remove_index].possibleColClues.remove(clue);
+    #going backwards, the last clue
+    for col_index in range (PUZZLE_HEIGHT-1, -1, -1) :
+        if GRAPH[col_number][col_index].val == 'O' :
+            clue = GRAPH[col_number][col_index].possibleColClues[-1];
+            clue_val = COL_CLUES[col_number][clue];
+            boundary_index = col_index-clue_val; #includes following X
+            for remove_index in range (boundary_index, -1, -1) :
+                if clue in GRAPH[col_number][remove_index].possibleColClues :
+                    GRAPH[col_number][remove_index].possibleColClues.remove(clue);
                     
 ##################################################################################
 # look at recently filled in row cell and update column
 # only called if filled in cell only has a single possible column clue
 def col_update(col_index, row_index) :
-    #if filled O
-    if GRAPH[col_index][row_index].val == 'O' :
-        column_clue = GRAPH[col_index][row_index].possibleColClues[0];
-        column_clue_val = COL_CLUES[col_index][column_clue];
-        # check number of cells clue is in, if larger than clue value can clean a bit
-        num_cells = 0;
-        first_cell = PUZZLE_HEIGHT;
-        last_cell = -1;
-        first_cell_filled = PUZZLE_HEIGHT;
-        last_cell_filled = -1;
-        for r in range (0, PUZZLE_HEIGHT) :
-            if column_clue in GRAPH[col_index][r].possibleColClues :
-                num_cells += 1;
-                if r < first_cell :
-                    first_cell = r;
-                if r > last_cell :
-                    last_cell = r;
-                    if len(GRAPH[col_index][r].possibleColClues) == 1 and GRAPH[col_index][r].val == 'O' :
-                        if r < first_cell_filled :
-                            first_cell_filled = r;
-                        if r > last_cell_filled :
-                            last_cell_filled = r;
-        # remove clues from cells that are out of range
-        if column_clue_val < last_cell-first_cell+1 :
-            if first_cell < (row_index - (column_clue_val-1)) :
-                for r in range(first_cell, row_index-(column_clue_val-1)) :
-                    for ColClue in GRAPH[col_index][r].possibleColClues :
-                        if ColClue >= column_clue :
-                            GRAPH[col_index][r].possibleColClues.remove(ColClue);
-                            # TODO : if possibleColClues reduced to null list, fill X
-            if last_cell > (row_index + column_clue_val -1) :
-                for r in range(row_index, last_cell) :
-                    for ColClue in GRAPH[col_index][r].possibleColClues :
-                        if ColClue <= column_clue :
-                            GRAPH[col_index][r].possibleColClues.remove(ColClue);
-                            # TODO : if possibleColClues reduced to null list, fill X
-    #if filled X
-    else :
-        return
+    if len(GRAPH[col_index][row_index].possibleColClues)==1 :
+        #if filled O
+        if GRAPH[col_index][row_index].val == 'O' :
+            column_clue = GRAPH[col_index][row_index].possibleColClues[0];
+            column_clue_val = COL_CLUES[col_index][column_clue];
+            # check number of cells clue is in, if larger than clue value can clean a bit
+            num_cells = 0;
+            first_cell = PUZZLE_HEIGHT;
+            last_cell = -1;
+            first_cell_filled = PUZZLE_HEIGHT;
+            last_cell_filled = -1;
+            for r in range (0, PUZZLE_HEIGHT) :
+                if column_clue in GRAPH[col_index][r].possibleColClues :
+                    num_cells += 1;
+                    if r < first_cell :
+                        first_cell = r;
+                    if r > last_cell :
+                        last_cell = r;
+                        if len(GRAPH[col_index][r].possibleColClues) == 1 and GRAPH[col_index][r].val == 'O' :
+                            if r < first_cell_filled :
+                                first_cell_filled = r;
+                            if r > last_cell_filled :
+                                last_cell_filled = r;
+            # remove clues from cells that are out of range
+            if column_clue_val < last_cell-first_cell+1 :
+                for r in range(0, row_index-(column_clue_val-1)) :
+                    if column_clue in GRAPH[col_index][r].possibleColClues :
+                        for ColClue in GRAPH[col_index][r].possibleColClues :
+                            if ColClue >= column_clue :
+                                GRAPH[col_index][r].possibleColClues.remove(ColClue);
+                                # TODO : if possibleColClues reduced to null list, fill X
+                for r in range(row_index+column_clue_val, PUZZLE_HEIGHT) :
+                    if column_clue in GRAPH[col_index][r].possibleColClues :
+                        for ColClue in GRAPH[col_index][r].possibleColClues :
+                            if ColClue <= column_clue :
+                                GRAPH[col_index][r].possibleColClues.remove(ColClue);
+                                # TODO : if possibleColClues reduced to null list, fill X
+        #if filled X
+        else :
+            # TODO
+            return
 ##################################################################################
 # look at recently filled in col cell and update row 
 # only called if filled in cell only has a single possible row clue
 def row_update(col_index, row_index) :
-    #if filled O
-    if GRAPH[col_index][row_index].val == 'O' :
-        row_clue = GRAPH[col_index][row_index].possibleRowClues[0];
-        row_clue_val = ROW_CLUES[row_index][row_clue];
-        # check number of cells clue is in, if larger than clue value can clean a bit
-        num_cells = 0;
-        first_cell = PUZZLE_WIDTH;
-        last_cell = -1;
-        first_cell_filled = PUZZLE_WIDTH;
-        last_cell_filled = -1;
-        for c in range (0, PUZZLE_WIDTH) :
-            if row_clue in GRAPH[c][row_index].possibleRowClues :
-                num_cells += 1;
-                if c < first_cell :
-                    first_cell = c;
-                if c > last_cell :
-                    last_cell = c;
-                    if len(GRAPH[c][row_index].possibleRowClues) == 1 and GRAPH[c][row_index].val == 'O' :
-                        if c < first_cell_filled :
-                            first_cell_filled = c;
-                        if c > last_cell_filled :
-                            last_cell_filled = c;
-        # remove clues from cells that are out of range
-        if row_clue_val < last_cell-first_cell+1 :
-            if first_cell < (row_index - (row_clue_val-1)) :
-                for c in range(first_cell, row_index-(row_clue_val-1)) :
-                    for RowClue in GRAPH[c][row_index].possibleRowClues :
-                        if RowClue >= row_clue :
-                            GRAPH[c][row_index].possibleRowClues.remove(RowClue);
-                            # TODO : if possibleRowClues reduced to null list, fill X
-            if last_cell > (row_index + row_clue_val -1) :
-                for c in range(row_index, last_cell) :
-                    for RowClue in GRAPH[c][row_index].possibleRowClues :
-                        if RowClue <= row_clue :
-                            GRAPH[c][row_index].possibleRowClues.remove(RowClue);
-                            # TODO : if possibleRowClues reduced to null list, fill X
-    #if filled X
-    else :
-        return
+    if len(GRAPH[col_index][row_index].possibleRowClues)==1 :
+        #if filled O
+        if GRAPH[col_index][row_index].val == 'O' :
+            row_clue = GRAPH[col_index][row_index].possibleRowClues[0];
+            row_clue_val = ROW_CLUES[row_index][row_clue];
+            # check number of cells clue is in, if larger than clue value can clean a bit
+            num_cells = 0;
+            first_cell = PUZZLE_WIDTH;
+            last_cell = -1;
+            first_cell_filled = PUZZLE_WIDTH;
+            last_cell_filled = -1;
+            for c in range (0, PUZZLE_WIDTH) :
+                if row_clue in GRAPH[c][row_index].possibleRowClues :
+                    num_cells += 1;
+                    if c < first_cell :
+                        first_cell = c;
+                    if c > last_cell :
+                        last_cell = c;
+                        if len(GRAPH[c][row_index].possibleRowClues) == 1 and GRAPH[c][row_index].val == 'O' :
+                            if c < first_cell_filled :
+                                first_cell_filled = c;
+                            if c > last_cell_filled :
+                                last_cell_filled = c;
+            # remove clues from cells that are out of range
+            if row_clue_val < last_cell-first_cell+1 :
+                for c in range(0, col_index-(row_clue_val-1)) :
+                    if row_clue in GRAPH[c][row_index].possibleRowClues :
+                        for RowClue in GRAPH[c][row_index].possibleRowClues :
+                            if RowClue >= row_clue :
+                                GRAPH[c][row_index].possibleRowClues.remove(RowClue);
+                                # TODO : if possibleRowClues reduced to null list, fill X
+                for c in range(col_index+row_clue_val, PUZZLE_WIDTH) :
+                    if row_clue in GRAPH[c][row_index].possibleRowClues :
+                        for RowClue in GRAPH[c][row_index].possibleRowClues :
+                            if RowClue <= row_clue :
+                                GRAPH[c][row_index].possibleRowClues.remove(RowClue);
+                                # TODO : if possibleRowClues reduced to null list, fill X
+        #if filled X
+        else :
+            # TODO
+            return
 ##################################################################################
 # if all possible clue values match contiguous Os
 # number of cells with clue as possibility matches clue value
@@ -863,11 +1064,10 @@ if regress_option >= 0 and regress_option <= len(PUZZLE_NAME) - 1 :
         TMP_GRAPH = copy.deepcopy(GRAPH);
         for c in range (0, PUZZLE_WIDTH) :
             for r in range (0, PUZZLE_HEIGHT) :
-                print c, r;
                 col_update(c, r);
                 row_update(c, r);
         if do_print == 1 and graphs_equal(TMP_GRAPH, GRAPH) == 0 :
-            print iteration, " After overlaps col";
+            print iteration, " After update";
             print_graph(debug);
 
         TMP_GRAPH = copy.deepcopy(GRAPH);
@@ -895,23 +1095,16 @@ else :
             PREV_GRAPH = copy.deepcopy(GRAPH);
             for i, clues in enumerate(ROW_CLUES) :
                 mark_overlaps_row(i);
-            for i, clues in enumerate(ROW_CLUES) :
-                analyze_X_row(i);
-            for i, clues in enumerate(ROW_CLUES) :
-                analyze_O_row(i);
-            for i, clues in enumerate(ROW_CLUES) :
-                clean_clues_row(i);
             # columns
             # iterates through columns and fills in overlaps
             for i, clues in enumerate(COL_CLUES) :
                 mark_overlaps_col(i);
-            for i, clues in enumerate(COL_CLUES) :
-                analyze_X_col(i);
-            for i, clues in enumerate(COL_CLUES) :
-                analyze_O_col(i);
-            for i, clues in enumerate(COL_CLUES) :
-                clean_clues_col(i);
         
+            for c in range (0, PUZZLE_WIDTH) :
+                for r in range (0, PUZZLE_HEIGHT) :
+                    col_update(c, r);
+                    row_update(c, r);
+
             check_for_completed_clues();
         
         if check_graph() == 0 :
