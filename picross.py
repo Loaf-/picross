@@ -573,6 +573,7 @@ def clean_clues_row ( row_number ) :
                         break;
                     clue_val = ROW_CLUES[row_number][clue];
             elif GRAPH[row_index][row_number].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                # TODO: clean up passed through cells
                 clue_val = ROW_CLUES[row_number][clue];
             elif clue in GRAPH[row_index][row_number].possibleRowClues :
                 for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
@@ -614,6 +615,7 @@ def clean_clues_row ( row_number ) :
                         break;
                     clue_val = ROW_CLUES[row_number][clue];
             elif GRAPH[row_index][row_number].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                # TODO: clean up passed through cells
                 clue_val = ROW_CLUES[row_number][clue];
             elif not clue in GRAPH[row_index][row_number].possibleRowClues :
                 for cell_clue in GRAPH[row_index][row_number].possibleRowClues :
@@ -705,6 +707,7 @@ def clean_clues_col ( col_number ) :
                         break;
                     clue_val = COL_CLUES[col_number][clue];
             elif GRAPH[col_number][col_index].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                # TODO: clean up passed through cells
                 clue_val = COL_CLUES[col_number][clue];
             elif not clue in GRAPH[col_number][col_index].possibleColClues :
                 for cell_clue in GRAPH[col_number][col_index].possibleColClues :
@@ -735,6 +738,7 @@ def clean_clues_col ( col_number ) :
                         break;
                     clue_val = COL_CLUES[col_number][clue];
             elif GRAPH[col_number][col_index].val == 'X' :   # non contiguous, reset clue_val count; the passed through cells should be cleaned up
+                # TODO: clean up passed through cells
                 clue_val = COL_CLUES[col_number][clue];
             elif not clue in GRAPH[col_number][col_index].possibleColClues :
                 for cell_clue in GRAPH[col_number][col_index].possibleColClues :
