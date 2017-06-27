@@ -652,15 +652,15 @@ def clean_clues_row ( row_number ) :
                 if clue in GRAPH[remove_index][row_number].possibleRowClues :
                     GRAPH[remove_index][row_number].possibleRowClues.remove(clue);
 
-            if row_index + 1 < PUZZLE_WIDTH :
-                for clue in GRAPH[row_index+1][row_number].possibleRowClues :
-                    if ROW_CLUES[row_number][clue] == 1 :
-                        GRAPH[row_index+1][row_number].possibleRowClues.remove(clue);
+            #if row_index + 1 < PUZZLE_WIDTH :
+            #    for clue in GRAPH[row_index+1][row_number].possibleRowClues :
+            #        if ROW_CLUES[row_number][clue] == 1 :
+            #            GRAPH[row_index+1][row_number].possibleRowClues.remove(clue);
 
-            if row_index - 1 >= 0 :
-                for clue in GRAPH[row_index-1][row_number].possibleRowClues :
-                    if ROW_CLUES[row_number][clue] == 1 :
-                        GRAPH[row_index-1][row_number].possibleRowClues.remove(clue);
+            #if row_index - 1 >= 0 :
+            #    for clue in GRAPH[row_index-1][row_number].possibleRowClues :
+            #        if ROW_CLUES[row_number][clue] == 1 :
+            #            GRAPH[row_index-1][row_number].possibleRowClues.remove(clue);
 
     #going backwards, the last clue
     for row_index in range (PUZZLE_WIDTH-1, -1, -1) :
