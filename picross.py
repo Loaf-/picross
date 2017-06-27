@@ -94,9 +94,25 @@ PUZZLE_NAME.append("Reshiram");
 ROW_CLUES_LIST.append( ((2,2,1,2), (4,2,1), (3,2,3), (3,3,1,3), (2,1,1,2,4,1), (1,3,4,2), (1,2,2,2,1), (3,2,1,1,2,1), (3,3,2), (5,1,3,3), (3,1,2,1,1), (3,1,1,1,1), (2,5,1,1,1), (1,3,1,3,2,3), (3,2,2,5)) );
 COL_CLUES_LIST.append( ((3,1,2), (1,2,1,1,1), (2,3,1,2), (2,1,2,1,2), (3,1,1,1,1,1), (3,2,1,1,2,1), (2,1,1,1,1,1), (1,2,1,2), (1,1,1,3), (1,1,2,1), (1,1,1,1,1), (1,1,6,1), (2,1,1,1,1), (1,2,4,1,1), (5,1,1,2), (6,2,3), (2,2,1), (2,2), (1,2,1,1), (2,2,1,1,2)) );
 
-PUZZLE_NAME.append("unknown");
+PUZZLE_NAME.append("Beedrill");
 ROW_CLUES_LIST.append( ((3,2,1,1), (2,1,1,2,1), (1,1,1,1,2), (7,2), (1,1,1,2,1,1), (1,2,1), (1,3), (2,2,1,1), (3,1,3,1), (1,1,5,2), (2,3,2), (3,3,4,1), (2,2), (5,), (1,3)) );
 COL_CLUES_LIST.append( ((2,1,1), (2,1,2), (1,3,1), (2,2,5), (2,1), (2,1), (1,1,2,1), (5,1,3,1), (1,4,2), (2,6), (9,1,1), (2,2,1,2), (2,1,1,1,2), (2,1,1,2,1), (3,1,1,2)) );
+
+PUZZLE_NAME.append("Unknown");
+ROW_CLUES_LIST.append( ((5,3,3), (1,3,2,1), (10,1), (1,9,1), (2,1,4,2), (1,1,2,1,2,3), (1,3,1,5), (2,3,3), (3,1,2,3), (2,8,4), (2,1,1,1,4,1), (9,1,2,1), (3,1,1,1,1,3), (3,1,1,1,1,2,1), (3,2,1,1,1,1,2)) );
+COL_CLUES_LIST.append( ((3,1), (5,1), (1,1,1,1), (1,1,1,1), (1,4,3,1), (1,1,1,1,4), (3,1,4,1), (1,1,1,1,3), (1,2,1,4,1), (4,1,1,3), (3,3,1,1), (3,3,4), (1,2,1,1,1), (1,3,5), (1,4,3,1), (1,7,2), (1,2,4,1,1), (1,1,3,1,3), (1,4,2,1), (2,3,2)) );
+
+PUZZLE_NAME.append("Picross Luna Puzzle #1");
+ROW_CLUES_LIST.append( ((5,), (3,3), (7,), (5,2), (10,), (8,2), (4,5,2), (4,6,2), (12,1), (2,4,4,1), (1,2,3), (1,2,3), (4,2,5), (4,2,6), (1,2,2,3)) );
+COL_CLUES_LIST.append( ((3,), (7,), (4,3), (4,3), (6,), (1,4,6), (6,7), (10,), (1,7,3), (10,3), (3,10), (4,9), (4,7), (4,2), (4,)) );
+
+PUZZLE_NAME.append("Picross Luna Puzzle #2");
+ROW_CLUES_LIST.append( ((1,), (5,), (6,), (8,), (3,2,2,2,1), (2,8,1), (13,), (13,), (1,8,2), (2,10), (12,), (1,1,3,2,2), (11,), (1,8), (6,)) );
+COL_CLUES_LIST.append( ((2,1,1), (1,2,1,1), (4,5,), (5,1,3), (9,), (12,), (14,), (3,6,2), (14,), (13,), (3,6,1), (6,4), (9,), (4,), (4,)) );
+
+PUZZLE_NAME.append("Picross Luna Puzzle #3");
+ROW_CLUES_LIST.append( ((10,), (10,), (6,), (4,), (4,), (4,), (3,6,3), (2,2,8,2,2), (1,12,1), (1,2,1,2,1,2,1), (1,2,1,1,1,1,2,1), (1,3,1,2,1,3,1), (1,14,1), (1,2,2,1), (2,3,3,2), (2,12,2), (3,1,1,1,1,3), (14,), (10,), (8,)) );
+COL_CLUES_LIST.append( ((8,), (2,2), (1,2), (2,5,2), (11,), (2,2,2,2,2), (2,2,1,1,5), (3,4,2,1,3), (9,1,1,5), (10,2,1,3), (10,2,1,3), (9,1,1,5), (3,4,2,1,3), (2,2,1,1,5), (2,2,2,2,2), (11,), (2,5,2), (1,2), (2,2), (8,)) );
 
 class graphCell :
     def __init__(self) :
@@ -117,6 +133,8 @@ class graphCell :
             self.val = 'X' ;
             self.possibleColClues = [];
             self.possibleRowClues = [];
+
+    # TODO: add clue removal function so that exception can be raised if val is O
 
 # initialize GRAPH given list of column clues and row clues
 def initialize_graph ( column_clues, row_clues ) :
@@ -518,7 +536,7 @@ def mark_overlaps_col ( col_number ) :
 
 ##################################################################################
 def clean_clues_row ( row_number ) :
-    #print_row_data(row_number);
+#    print_row_data(row_number);
     for row_index in range (0,PUZZLE_WIDTH) :
         clues_to_remove = [];
         for clue in GRAPH[row_index][row_number].possibleRowClues :
@@ -623,15 +641,27 @@ def clean_clues_row ( row_number ) :
                         GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
     
     # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
+    # special case, if a cell has O then cells next to it can't have clue vals of 1
     #print_row_data(row_number);
     for row_index in range (0, PUZZLE_WIDTH) :
         if GRAPH[row_index][row_number].val == 'O' :
             clue = GRAPH[row_index][row_number].possibleRowClues[0];
             clue_val = ROW_CLUES[row_number][clue];
             boundary_index = row_index+clue_val; #includes following X
-            for remove_index in range (boundary_index+1, PUZZLE_WIDTH) :
+            for remove_index in range (boundary_index, PUZZLE_WIDTH) :
                 if clue in GRAPH[remove_index][row_number].possibleRowClues :
                     GRAPH[remove_index][row_number].possibleRowClues.remove(clue);
+
+            if row_index + 1 < PUZZLE_WIDTH :
+                for clue in GRAPH[row_index+1][row_number].possibleRowClues :
+                    if ROW_CLUES[row_number][clue] == 1 :
+                        GRAPH[row_index+1][row_number].possibleRowClues.remove(clue);
+
+            if row_index - 1 >= 0 :
+                for clue in GRAPH[row_index-1][row_number].possibleRowClues :
+                    if ROW_CLUES[row_number][clue] == 1 :
+                        GRAPH[row_index-1][row_number].possibleRowClues.remove(clue);
+
     #going backwards, the last clue
     for row_index in range (PUZZLE_WIDTH-1, -1, -1) :
         if GRAPH[row_index][row_number].val == 'O' :
@@ -751,7 +781,7 @@ def clean_clues_col ( col_number ) :
             clue = GRAPH[col_number][col_index].possibleColClues[0];
             clue_val = COL_CLUES[col_number][clue];
             boundary_index = col_index+clue_val; #includes following X
-            for remove_index in range (boundary_index+1, PUZZLE_HEIGHT) :
+            for remove_index in range (boundary_index, PUZZLE_HEIGHT) :
                 if clue in GRAPH[col_number][remove_index].possibleColClues :
                     GRAPH[col_number][remove_index].possibleColClues.remove(clue);
     #going backwards, the last clue
@@ -1026,7 +1056,7 @@ def check_for_completed_clues () :
 ########################################### MAIN ##############################################
 print "Regression options:";
 for i, puzzle_name in enumerate(PUZZLE_NAME) :
-    print i, ":", puzzle_name;
+    print i, ":", puzzle_name, " [", len(COL_CLUES_LIST[i]),"x", len(ROW_CLUES_LIST[i]),"]";
 print "all : run all puzzles";
 regress_option = input("Enter regression choice: ");
 
@@ -1094,7 +1124,8 @@ else :
         initialize_graph(COL_CLUES, ROW_CLUES);
         
         PREV_GRAPH = [ [ graphCell() for h in range(PUZZLE_HEIGHT)] for w in range(PUZZLE_WIDTH) ];   # horizontal list of vertical lists. top left is 0,0; bottom right is [w][h]
-        
+       
+        iteration = 0;
         while graphs_equal(PREV_GRAPH, GRAPH) == 0 :
             PREV_GRAPH = copy.deepcopy(GRAPH);
             for i, clues in enumerate(ROW_CLUES) :
@@ -1110,8 +1141,9 @@ else :
                     row_update(c, r);
 
             check_for_completed_clues();
+            iteration += 1;
         
         if check_graph() == 0 :
             print "NOT COMPLETE", puzzle_num, puzzle_name;
         else :
-            print "    COMPLETE", puzzle_num, puzzle_name;
+            print "    COMPLETE", puzzle_num, puzzle_name, iteration;
