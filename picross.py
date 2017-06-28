@@ -2,6 +2,9 @@
 import sys
 import copy
 
+# TODO: too much global variable business, clean it up
+# TODO: so much looping, optimize?
+# TODO: currently have separate functions for row and clues, combine or make generic
 
 # graph has 0,0 in the top left corner.  [x][y] will be in the bottom right corner.
 
@@ -98,7 +101,7 @@ PUZZLE_NAME.append("Beedrill");
 ROW_CLUES_LIST.append( ((3,2,1,1), (2,1,1,2,1), (1,1,1,1,2), (7,2), (1,1,1,2,1,1), (1,2,1), (1,3), (2,2,1,1), (3,1,3,1), (1,1,5,2), (2,3,2), (3,3,4,1), (2,2), (5,), (1,3)) );
 COL_CLUES_LIST.append( ((2,1,1), (2,1,2), (1,3,1), (2,2,5), (2,1), (2,1), (1,1,2,1), (5,1,3,1), (1,4,2), (2,6), (9,1,1), (2,2,1,2), (2,1,1,1,2), (2,1,1,2,1), (3,1,1,2)) );
 
-PUZZLE_NAME.append("Unknown");
+PUZZLE_NAME.append("Genesect");
 ROW_CLUES_LIST.append( ((5,3,3), (1,3,2,1), (10,1), (1,9,1), (2,1,4,2), (1,1,2,1,2,3), (1,3,1,5), (2,3,3), (3,1,2,3), (2,8,4), (2,1,1,1,4,1), (9,1,2,1), (3,1,1,1,1,3), (3,1,1,1,1,2,1), (3,2,1,1,1,1,2)) );
 COL_CLUES_LIST.append( ((3,1), (5,1), (1,1,1,1), (1,1,1,1), (1,4,3,1), (1,1,1,1,4), (3,1,4,1), (1,1,1,1,3), (1,2,1,4,1), (4,1,1,3), (3,3,1,1), (3,3,4), (1,2,1,1,1), (1,3,5), (1,4,3,1), (1,7,2), (1,2,4,1,1), (1,1,3,1,3), (1,4,2,1), (2,3,2)) );
 
@@ -134,7 +137,7 @@ class graphCell :
             self.possibleColClues = [];
             self.possibleRowClues = [];
 
-    # TODO: add clue removal function so that exception can be raised if val is O
+    # TODO: add clue removal function so that exception can be raised if val is O and all clues are removed
 
 # initialize GRAPH given list of column clues and row clues
 def initialize_graph ( column_clues, row_clues ) :
@@ -537,21 +540,22 @@ def mark_overlaps_col ( col_number ) :
 ##################################################################################
 def clean_clues_row ( row_number ) :
 #    print_row_data(row_number);
+    # for each cell in row, check if each clue in the cell is possible -- cell is in contiguous cells of clue value length where clue is in each cell AND cell on either side of contiguous cells is X or empty
     for row_index in range (0,PUZZLE_WIDTH) :
         clues_to_remove = [];
         for clue in GRAPH[row_index][row_number].possibleRowClues :
-            # check range of all clues to see if possible, if not remove clue
-            # start with index as last possible cell for clue
+            # for a clue in cell, check clue val contiguous cells for clue in each cell
             last_index = row_index;
             first_index = row_index - ROW_CLUES[row_number][clue] + 1;
             clue_fits = 0;
-            # look for cases where clue CAN fit
+            # clue val of contiguous cells
+            # TODO: do this in cleaner method
             while first_index <= row_index and last_index < PUZZLE_WIDTH :
                 if first_index < 0 :
                     first_index += 1;
                     last_index += 1;
                 else :
-                    # clue in each cell
+                    # check clue in each cell
                     clue_in_cells = 1;
                     for index in range (first_index, last_index + 1) :
                         try :
@@ -674,21 +678,22 @@ def clean_clues_row ( row_number ) :
 
 ##################################################################################
 def clean_clues_col ( col_number ) :
+    # for each cell in row, check if each clue in the cell is possible -- cell is in contiguous cells of clue value length where clue is in each cell AND cell on either side of contiguous cells is X or empty
     for col_index in range (0,PUZZLE_HEIGHT) :
         clues_to_remove = [];
         for clue in GRAPH[col_number][col_index].possibleColClues :
-            # check range of all clues to see if possible, if not remove clue
-            # start with index as last possible cell for clue
+            # for a clue in cell, check clue val contiguous cells for clue in each cell
             last_index = col_index;
             first_index = col_index - COL_CLUES[col_number][clue] + 1;
             clue_fits = 0;
-            # look for cases where clue CAN fit
+            # clue val of contiguous cells
+            # TODO: do this in cleaner method
             while first_index <= col_index and last_index < PUZZLE_HEIGHT :
                 if first_index < 0 :
                     first_index += 1;
                     last_index += 1;
                 else :
-                    # clue in each cell
+                    # check clue in each cell
                     clue_in_cells = 1;
                     for index in range (first_index, last_index + 1) :
                         try :
@@ -776,6 +781,7 @@ def clean_clues_col ( col_number ) :
                         GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
     
     # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
+    # special case, if a cell has O then cells next to it can't have clue vals of 1
     for col_index in range (0, PUZZLE_HEIGHT) :
         if GRAPH[col_number][col_index].val == 'O' :
             clue = GRAPH[col_number][col_index].possibleColClues[0];
@@ -784,6 +790,17 @@ def clean_clues_col ( col_number ) :
             for remove_index in range (boundary_index, PUZZLE_HEIGHT) :
                 if clue in GRAPH[col_number][remove_index].possibleColClues :
                     GRAPH[col_number][remove_index].possibleColClues.remove(clue);
+
+            #if row_index + 1 < PUZZLE_WIDTH :
+            #    for clue in GRAPH[row_index+1][row_number].possibleRowClues :
+            #        if ROW_CLUES[row_number][clue] == 1 :
+            #            GRAPH[row_index+1][row_number].possibleRowClues.remove(clue);
+
+            #if row_index - 1 >= 0 :
+            #    for clue in GRAPH[row_index-1][row_number].possibleRowClues :
+            #        if ROW_CLUES[row_number][clue] == 1 :
+            #            GRAPH[row_index-1][row_number].possibleRowClues.remove(clue);
+
     #going backwards, the last clue
     for col_index in range (PUZZLE_HEIGHT-1, -1, -1) :
         if GRAPH[col_number][col_index].val == 'O' :
