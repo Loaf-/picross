@@ -105,6 +105,10 @@ PUZZLE_NAME.append("Genesect");
 ROW_CLUES_LIST.append( ((5,3,3), (1,3,2,1), (10,1), (1,9,1), (2,1,4,2), (1,1,2,1,2,3), (1,3,1,5), (2,3,3), (3,1,2,3), (2,8,4), (2,1,1,1,4,1), (9,1,2,1), (3,1,1,1,1,3), (3,1,1,1,1,2,1), (3,2,1,1,1,1,2)) );
 COL_CLUES_LIST.append( ((3,1), (5,1), (1,1,1,1), (1,1,1,1), (1,4,3,1), (1,1,1,1,4), (3,1,4,1), (1,1,1,1,3), (1,2,1,4,1), (4,1,1,3), (3,3,1,1), (3,3,4), (1,2,1,1,1), (1,3,5), (1,4,3,1), (1,7,2), (1,2,4,1,1), (1,1,3,1,3), (1,4,2,1), (2,3,2)) );
 
+PUZZLE_NAME.append("Diancie");
+ROW_CLUES_LIST.append( ((1,1,1,1), (1,5,2), (5,7), (1,1,3,1), (1,1,1,1), (3,1,1), (4,5), (14,), (2,2,3,2), (2,1,3,2,1,2), (3,8,2,2), (1,2,1,3,1,1,1), (2,1,1,1,2), (1,2,4,1), (1,1,2,2,1,1,2)) );
+COL_CLUES_LIST.append( ((2,), (1,), (3,2,1), (1,3,1,2), (1,4,2,1), (12,1), (1,2,1,3), (1,1,3,1), (2,4), (1,5,1), (1,1,5), (2,2,3,1), (1,9,2), (2,3,3), (3,5,1), (3,2,3), (1,1,2,3), (3,2,1), (2,), (2,)) );
+
 PUZZLE_NAME.append("Picross Luna Puzzle #1");
 ROW_CLUES_LIST.append( ((5,), (3,3), (7,), (5,2), (10,), (8,2), (4,5,2), (4,6,2), (12,1), (2,4,4,1), (1,2,3), (1,2,3), (4,2,5), (4,2,6), (1,2,2,3)) );
 COL_CLUES_LIST.append( ((3,), (7,), (4,3), (4,3), (6,), (1,4,6), (6,7), (10,), (1,7,3), (10,3), (3,10), (4,9), (4,7), (4,2), (4,)) );
@@ -645,7 +649,7 @@ def clean_clues_row ( row_number ) :
                         GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
     
     # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
-    # special case, if a cell has O then cells next to it can't have clue vals of 1
+    # special case, if a cell has O then cells next to it can't have clue vals of 1 -- uncessary?
     #print_row_data(row_number);
     for row_index in range (0, PUZZLE_WIDTH) :
         if GRAPH[row_index][row_number].val == 'O' :
@@ -781,7 +785,7 @@ def clean_clues_col ( col_number ) :
                         GRAPH[col_number][col_index].possibleColClues.remove(cell_clue);
     
     # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
-    # special case, if a cell has O then cells next to it can't have clue vals of 1
+    # special case, if a cell has O then cells next to it can't have clue vals of 1 -- unecessary?
     for col_index in range (0, PUZZLE_HEIGHT) :
         if GRAPH[col_number][col_index].val == 'O' :
             clue = GRAPH[col_number][col_index].possibleColClues[0];
