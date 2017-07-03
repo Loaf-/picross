@@ -109,6 +109,10 @@ PUZZLE_NAME.append("Diancie");
 ROW_CLUES_LIST.append( ((1,1,1,1), (1,5,2), (5,7), (1,1,3,1), (1,1,1,1), (3,1,1), (4,5), (14,), (2,2,3,2), (2,1,3,2,1,2), (3,8,2,2), (1,2,1,3,1,1,1), (2,1,1,1,2), (1,2,4,1), (1,1,2,2,1,1,2)) );
 COL_CLUES_LIST.append( ((2,), (1,), (3,2,1), (1,3,1,2), (1,4,2,1), (12,1), (1,2,1,3), (1,1,3,1), (2,4), (1,5,1), (1,1,5), (2,2,3,1), (1,9,2), (2,3,3), (3,5,1), (3,2,3), (1,1,2,3), (3,2,1), (2,), (2,)) );
 
+PUZZLE_NAME.append("Cobalion");
+ROW_CLUES_LIST.append( ((4,3,2), (4,3,3), (3,2,3), (4,3), (3,3,1), (1,4,2), (4,1,1,1), (3,1,1,2,2), (1,1,1,1,1), (1,2,1,1,2,1), (3,1,2,2,2), (3,1,3,3), (4,1,2,2), (1,2,2,2), (2,1,2)) );
+COL_CLUES_LIST.append( ((2,), (1,1), (2,1,2), (1,3,1,1,1), (4,1,4,1), (5,2,1,2), (2,1,1,1), (2,1,2,1,2), (1,1,1,3,3), (2,2), (1,1), (2,2,4,1), (1,1,3,5), (1,4,3), (1,2), (2,2), (1,2,1), (2,1,3), (1,7), (2,)) );
+
 PUZZLE_NAME.append("Picross Luna Puzzle #1");
 ROW_CLUES_LIST.append( ((5,), (3,3), (7,), (5,2), (10,), (8,2), (4,5,2), (4,6,2), (12,1), (2,4,4,1), (1,2,3), (1,2,3), (4,2,5), (4,2,6), (1,2,2,3)) );
 COL_CLUES_LIST.append( ((3,), (7,), (4,3), (4,3), (6,), (1,4,6), (6,7), (10,), (1,7,3), (10,3), (3,10), (4,9), (4,7), (4,2), (4,)) );
@@ -649,7 +653,7 @@ def clean_clues_row ( row_number ) :
                         GRAPH[row_index][row_number].possibleRowClues.remove(cell_clue);
     
     # if a cell has O, the first clue can not be a possible clue in cells beyond the clue val from this cell
-    # special case, if a cell has O then cells next to it can't have clue vals of 1 -- uncessary?
+    # special case, if a cell has O then cells next to it can't have clue vals of 1 -- unecessary?
     #print_row_data(row_number);
     for row_index in range (0, PUZZLE_WIDTH) :
         if GRAPH[row_index][row_number].val == 'O' :
@@ -795,15 +799,15 @@ def clean_clues_col ( col_number ) :
                 if clue in GRAPH[col_number][remove_index].possibleColClues :
                     GRAPH[col_number][remove_index].possibleColClues.remove(clue);
 
-            #if row_index + 1 < PUZZLE_WIDTH :
-            #    for clue in GRAPH[row_index+1][row_number].possibleRowClues :
-            #        if ROW_CLUES[row_number][clue] == 1 :
-            #            GRAPH[row_index+1][row_number].possibleRowClues.remove(clue);
+            #if col_index + 1 < PUZZLE_WIDTH :
+            #    for clue in GRAPH[col_number][col_index+1].possibleColClues :
+            #        if COL_CLUES[col_number][clue] == 1 :
+            #            GRAPH[col_number][col_index+1].possibleColClues.remove(clue);
 
-            #if row_index - 1 >= 0 :
-            #    for clue in GRAPH[row_index-1][row_number].possibleRowClues :
-            #        if ROW_CLUES[row_number][clue] == 1 :
-            #            GRAPH[row_index-1][row_number].possibleRowClues.remove(clue);
+            #if col_index - 1 >= 0 :
+            #    for clue in GRAPH[col_number][col_index-1].possibleColClues :
+            #        if COL_CLUES[col_number][clue] == 1 :
+            #            GRAPH[col_number][col_index-1].possibleColClues.remove(clue);
 
     #going backwards, the last clue
     for col_index in range (PUZZLE_HEIGHT-1, -1, -1) :
@@ -816,9 +820,9 @@ def clean_clues_col ( col_number ) :
                     GRAPH[col_number][remove_index].possibleColClues.remove(clue);
                     
 ##################################################################################
-# look at recently filled in row cell and update column
-# only called if filled in cell only has a single possible column clue
+# based on recently filled in cell, update col
 def col_update(col_index, row_index) :
+    # if cell only has one possible clue
     if len(GRAPH[col_index][row_index].possibleColClues)==1 :
         #if filled O
         if GRAPH[col_index][row_index].val == 'O' :
@@ -860,9 +864,37 @@ def col_update(col_index, row_index) :
         else :
             # TODO
             return
+    # if cell has more than one clue
+    else :
+        if GRAPH[col_index][row_index].val == 'O' :
+            # find nearest X
+            # can fill in smallest clue value minus nearest X distance cells in the opposite direction of X
+            smallest_clue_val = COL_CLUES[col_index][0];
+            for clue_index in GRAPH[col_index][row_index].possibleColClues :
+                if COL_CLUES[col_index][clue_index] < smallest_clue_val :
+                    smallest_clue_val = COL_CLUES[col_index][clue_index];
+    
+            row_index_down = row_index - 1;
+            while row_index_down >= 0 and not GRAPH[col_index][row_index_down].val == 'X' :
+                row_index_down -= 1;
+            row_index_up = row_index + 1;
+            while row_index_up < PUZZLE_HEIGHT and not GRAPH[col_index][row_index_up].val == 'X' :
+                row_index_up += 1;
+            if (row_index_up - row_index) < (row_index - row_index_down) :
+                nearest_X_distance = row_index_up - row_index;
+                direction = -1; # can fill in away from nearest X
+            else :
+                nearest_X_distance = row_index - row_index_down;
+                direction = 1;
+            fillable_cells = smallest_clue_val - nearest_X_distance;
+            tmp_row_index = row_index + direction;
+            while fillable_cells > 0 :
+               GRAPH[col_index][tmp_row_index].val = 'O';
+               fillable_cells -= 1;
+               tmp_row_index += direction;
+
 ##################################################################################
-# look at recently filled in col cell and update row 
-# only called if filled in cell only has a single possible row clue
+# based on recently filled in cell, update row
 def row_update(col_index, row_index) :
     if len(GRAPH[col_index][row_index].possibleRowClues)==1 :
         #if filled O
@@ -905,6 +937,36 @@ def row_update(col_index, row_index) :
         else :
             # TODO
             return
+    # if cell has more than one clue
+    else :
+        if GRAPH[col_index][row_index].val == 'O' :
+            # find nearest X
+            # can fill in smallest clue value minus nearest X distance cells in the opposite direction of X
+            smallest_clue_val = ROW_CLUES[row_index][0];
+            for clue_index in GRAPH[col_index][row_index].possibleRowClues :
+                if ROW_CLUES[row_index][clue_index] < smallest_clue_val :
+                    smallest_clue_val = ROW_CLUES[row_index][clue_index];
+
+            col_index_down = col_index - 1;
+            while col_index_down >= 0 and not GRAPH[col_index_down][row_index].val == 'X' :
+                col_index_down -= 1;
+            col_index_up = col_index + 1;
+            while col_index_up < PUZZLE_WIDTH and not GRAPH[col_index_up][row_index].val == 'X' :
+                col_index_up += 1;
+            if (col_index_up - col_index) < (col_index - col_index_down) :
+                nearest_X_distance = col_index_up - col_index;
+                direction = -1; # can fill in away from nearest X
+            else :
+                nearest_X_distance = col_index - col_index_down;
+                direction = 1;
+            fillable_cells = smallest_clue_val - nearest_X_distance;
+            tmp_col_index = col_index + direction;
+            while fillable_cells > 0 :
+                #print "fillable_cells: ", fillable_cells, "smallest clue val: ", smallest_clue_val, "nearest X: ", nearest_X_distance, col_index_down, col_index, col_index_up;
+                GRAPH[tmp_col_index][row_index].val = 'O';
+                fillable_cells -= 1;
+                tmp_col_index += direction;
+
 ##################################################################################
 # if all possible clue values match contiguous Os
 # number of cells with clue as possibility matches clue value
